@@ -1,5 +1,22 @@
+import data_classes.Person
+
 fun main(args: Array<String>) {
-     germanNumbers()
+//     germanNumbers()
+    Person ("Musyoka", 23, "Nairobi").let {
+        println(it)
+        it.moveTo("Durban")
+        it.incrementAge()
+        println(it)
+    }
+
+/**
+ * Prevents writing code as below
+ * Which instantiates a new object of the person
+ **/
+//    val person = Person("Musyoka", 23, "Nairobi")
+//    person.incrementAge()
+//    person.moveTo("Washington")
+//    println(person)
 }
 
 fun germanNumbers (){
@@ -26,4 +43,3 @@ fun germanNumbers (){
  * Executes a block of code within the context of an object
  * Example below shows the use of scope functions
  */
-
