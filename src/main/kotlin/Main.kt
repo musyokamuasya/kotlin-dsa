@@ -20,3 +20,10 @@ fun germanNumbers (){
         }
     }
 }
+
+//Scope functions
+/**
+ * Executes a block of code within the context of an object
+ * Example below shows the use of scope functions
+ */
+
