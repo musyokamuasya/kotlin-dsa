@@ -8,6 +8,10 @@ data class Person(
     fun moveTo(newCity: String){
         city = newCity
     }
+
+    fun incrementAge(newAge: String){
+        age = newAge
+    }
 }
 
 
