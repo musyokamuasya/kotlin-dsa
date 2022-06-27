@@ -1,17 +1,30 @@
 import data_classes.Person
 
 fun main(args: Array<String>) {
+
+    /**
+     *Run, with and apply refers to context objects which are used as the context receivers
+     * The object is available in their contexts as it would in normal context receivers
+     * For example, you can access the person object values without using this.age or somthing like tha
+     **/
+    val nashon = Person("Nashon", 25, "Toronto" ).apply {
+        age = 26
+        city = "Mogandishu"
+    }
+
+    println(nashon)
+
 //     germanNumbers()
     /**
      * Executes a block of code within the context of an object
      * Example below shows the use of scope functions
      */
-    Person ("Musyoka", 23, "Nairobi").let {
-        println(it)
-        it.moveTo("Durban")
-        it.incrementAge()
-        println(it)
-    }
+//    Person ("Musyoka", 23, "Nairobi").let {
+//        println(it)
+//        it.moveTo("Durban")
+//        it.incrementAge()
+//        println(it)
+//    }
 
 /**
  * Prevents writing code as below
