@@ -2,6 +2,10 @@ import data_classes.Person
 
 fun main(args: Array<String>) {
 //     germanNumbers()
+    /**
+     * Executes a block of code within the context of an object
+     * Example below shows the use of scope functions
+     */
     Person ("Musyoka", 23, "Nairobi").let {
         println(it)
         it.moveTo("Durban")
@@ -39,7 +43,3 @@ fun germanNumbers (){
 }
 
 //Scope functions
-/**
- * Executes a block of code within the context of an object
- * Example below shows the use of scope functions
- */
