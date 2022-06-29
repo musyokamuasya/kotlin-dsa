@@ -32,6 +32,17 @@ fun main(args: Array<String>){
         }
     }
 
+    /**
+     * An example of quadratic time notation. Takes the time complexity square of the input
+     **/
+    fun multiplicationTable(size: Int){
+        for(firstNumber in 1..size){
+            for (secondNumber in 1..size){
+                println(firstNumber*secondNumber)
+            }
+        }
+    }
+
 //Check the time the function runs in milliseconds
 
     fun checkTimeMills (){
@@ -51,6 +62,15 @@ fun main(args: Array<String>){
        val time = measureTimeMillis {
             getAllNames(listOf("Kenya", "Tanzania", "Uganda", "Namibia", "Lesotho", "South Africa"))
         }
-        print(time)
+        println(time)
+        val time2 = measureTimeMillis {
+            multiplicationTable(3)
+        }
+        println(time2)
+
+        val time3 = measureTimeMillis {
+            multiplicationTable(10)
+        }
+        println(time3)
     }
 
