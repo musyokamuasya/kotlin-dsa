@@ -43,6 +43,36 @@ fun main(args: Array<String>){
         }
     }
 
+    /**
+     * Logarithmic time leverages some shortcuts and uses some methods to test only a subset of data needed
+     **/
+    fun logarithmicExample(value: Int, numbers: List<Int>): String{
+        if(numbers.isEmpty()){
+            return "No $value found"
+        }
+        val middleIndex = numbers.size/2
+        if(value <= middleIndex){
+        // Look for the number in lower indices
+            for (index in 0..middleIndex){
+                if (numbers[index] == value){
+                    println(value)
+                    return "Value is $value"
+                }
+            }
+        }
+        else {
+            // Look for number in upper indices
+            for (index in middleIndex..numbers.size){
+                if (numbers[index] == value){
+                    println(value)
+                    return "Value is $value"
+                }
+            }
+        }
+
+        return "Value was not found"
+    }
+
 //Check the time the function runs in milliseconds
 
     fun checkTimeMills (){
@@ -59,18 +89,23 @@ fun main(args: Array<String>){
 
 
 //        Linear function
-       val time = measureTimeMillis {
-            getAllNames(listOf("Kenya", "Tanzania", "Uganda", "Namibia", "Lesotho", "South Africa"))
-        }
-        println(time)
-        val time2 = measureTimeMillis {
-            multiplicationTable(3)
-        }
-        println(time2)
+//       val time = measureTimeMillis {
+//            getAllNames(listOf("Kenya", "Tanzania", "Uganda", "Namibia", "Lesotho", "South Africa"))
+//        }
+//        println(time)
+//        val time2 = measureTimeMillis {
+//            multiplicationTable(3)
+//        }
+//        println(time2)
+//
+//        val time3 = measureTimeMillis {
+//            multiplicationTable(10)
+//        }
+//        println(time3)
+     val logTime = measureTimeMillis {
+         logarithmicExample(3, listOf(1,2,3,4,5,6,7,7,8,8,9,10,28,64,642,649, 993, 6353))
+     }
+        println(logTime)
 
-        val time3 = measureTimeMillis {
-            multiplicationTable(10)
-        }
-        println(time3)
     }
 
