@@ -49,11 +49,27 @@ class LinkedList <T> {
     size ++
     return this
     }
+    /**
+     * Add to the end of the list
+     * */
+    fun append(value: T){
+//        Since for an empty list append is same as push, just call push method
+        if (isEmpty()){
+            push(value)
+            return
+        }
+//        Add a new node to the tail. The new insertion becomes the new tail, and the former tail is the new next to former tail
+        tail?.next = Node(value=value)
+        tail = tail?.next
+        size ++
+    }
 }
+
 
 fun main(){
     val linkedList = LinkedList<Int>()
     val node4 = linkedList.push(4).push(7).push(2)
+    val node5 = linkedList.append(6)
     val node1 = Node(value = 1)
     val node2 = Node(value = 2)
     val node3 = Node(value = 3)
@@ -63,5 +79,6 @@ fun main(){
 
 
     println(node4)
+    println(node5)
     println(node1)
 }
