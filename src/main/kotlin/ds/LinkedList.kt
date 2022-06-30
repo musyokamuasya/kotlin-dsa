@@ -63,6 +63,38 @@ class LinkedList <T> {
         tail = tail?.next
         size ++
     }
+
+    /**
+     * Insert node at a particular index
+     *
+     * The process involves two steps
+     * 1. Iterating to find position where the new node will be inserted
+     * 2. Adding the value to the node
+     * */
+    fun pointIdentification (index: Int): Node<T>?{
+//        Starting at head node at index zero because we have to start there!
+        var currentNode = head
+        var currentIndex =0
+        while (
+            currentNode != null && currentIndex< index
+        )
+        {
+            currentNode = currentNode.next
+            currentIndex ++
+        }
+        return currentNode
+    }
+    fun insert(value: T, afterNode: Node<T>):Node<T>{
+//       Similar to append
+        if(tail == afterNode){
+            append(value)
+        }
+//      Create a new node and link to the other node
+        val newNode = Node(value = value, next = afterNode.next)
+        afterNode.next = newNode
+        size ++
+        return newNode
+    }
 }
 
 
