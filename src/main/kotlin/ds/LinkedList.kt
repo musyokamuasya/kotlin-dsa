@@ -40,18 +40,20 @@ class LinkedList <T> {
         return head.toString()
     }
 //    Push method to add values at the tail of the linkedlist
-    fun push(value: T){
+    fun push(value: T): LinkedList<T>{
         head = Node(value =value, next = head)
 //    Check if there is no value at the tail, tail value will be the head value
         if(tail == null){
             tail = head
         }
+    size ++
+    return this
     }
 }
 
 fun main(){
     val linkedList = LinkedList<Int>()
-    val node4 = linkedList.push(4)
+    val node4 = linkedList.push(4).push(7).push(2)
     val node1 = Node(value = 1)
     val node2 = Node(value = 2)
     val node3 = Node(value = 3)
@@ -60,6 +62,6 @@ fun main(){
     node2.next = node3
 
 
-//    println(node4)
+    println(node4)
     println(node1)
 }
