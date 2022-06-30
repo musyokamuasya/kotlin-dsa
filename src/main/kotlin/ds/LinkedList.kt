@@ -98,6 +98,8 @@ class LinkedList <T> {
 
     /**
      * Removing data follows similar trend as adding. Uses pop, removeLast and removeAfter methods
+     *
+     * You can call the method directly to the main function.
      * */
     fun pop():T?{
 //        Check if the list is not empty, and remove from the head
@@ -111,6 +113,30 @@ class LinkedList <T> {
         }
         return result
     }
+
+    /** Remove last method is inconvenient because you have to traverse the whole list to get the tail*/
+
+    /**Remove at specific point is similar to insert operation
+     * First determine the position where the node will be removed
+     * Pop out the node
+     * Connect the previous node with the next node
+     * */
+
+    fun removeAfter (node: Node<T>):T?{
+        val removedNode = node.next?.value
+
+        if (node.next == tail){
+            tail =node
+        }
+
+        if(node.next!= null){
+            size --
+        }
+
+        node.next = node.next?.next
+        return removedNode
+    }
+
 }
 
 
