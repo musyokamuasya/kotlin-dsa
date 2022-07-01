@@ -7,10 +7,25 @@ package stacks
  * Memory Allocation
  * Search and conquer algorithms
  * */
-//Stacks provide two main methods, for adding values to the stack, and removing values
-interface Stack<Element>{
-    fun push (element: Element)
-    fun pop(): Element?
-}
 
 //ArrayList makes sense in stacks because they offer constant time read and writes
+class Stack(size: Int){
+    private var stackSize = size
+    private var stackArr = IntArray(stackSize)
+    private var top = -1
+// Push method to add items to the stack
+    fun push(){
+    }
+//    Pop method to get items from the stack
+    fun pop(){
+
+    }
+//    Size method returns the total number of items
+    fun size(){
+
+    }
+//    Peek method looks at item at a particular position
+    fun peek(){
+
+    }
+}
