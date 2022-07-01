@@ -9,13 +9,24 @@ import ds.Node
  * Mutable Collection - A collection which allows for mutation of the collection ie alter the collection
  * */
 
-class LinkedList <T> :Iterable<T>{
+class LinkedList <T> :Iterable<T>, Collection<T>{
     private var head: Node<T>? = null
     private var tail: Node<T>? = null
-    var size = 0
+   override var size = 0
     private set
 
-    private fun isEmpty(): Boolean {
+    override fun containsAll(elements: Collection<T>): Boolean {
+        TODO("Not yet implemented")
+    }
+
+    override fun contains(element: T): Boolean {
+        for (item in this){
+            if (item == element) return true
+        }
+        return false
+    }
+
+    override  fun isEmpty(): Boolean {
         return size == 0
     }
 
@@ -42,11 +53,23 @@ class LinkedList <T> :Iterable<T>{
         }
         return currentNode
     }
+    fun pop():T?{
+//        Check if the list is not empty, and remove from the head
+        if (!isEmpty()) size --
+        val result = head?.value
+//        The head shifts to new head
+        head = head?.next
+//If the list is empty, there is no tail
+        if (isEmpty()){
+            tail =null
+        }
+        return result
+    }
 }
 
 class LinkedListIterator <T> (
     private val linkedList: LinkedList<T>
-        ): Iterator<T>{
+        ): Iterator<T>, MutableIterator<T>{
     private var index = 0
 //    Last node helps us keep track of our nodes
     private var lastNode: Node<T>? = null
@@ -64,5 +87,16 @@ class LinkedListIterator <T> (
         }
         index ++
         return lastNode!!.value
+    }
+
+    override fun remove() {
+        if (index == 1){
+            linkedList.pop()
+        }
+
+//        Iterate to find items inside the list
+        val prevNode = linkedList.pointIdentification(-2)?: return
+//        Implement the other members
+
     }
 }
