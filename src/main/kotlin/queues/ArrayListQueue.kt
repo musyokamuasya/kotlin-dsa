@@ -1,6 +1,6 @@
 package queues
 
-class ArrayListQueue<T> : Queue<T> {
+class ArrayListQueue<T> : QueueInterface<T> {
 //Initiate the array list
     private val arrayList = arrayListOf<T>()
 //    Add item to the top of the queue. Doesn't matter whether the queue had items or it was null
