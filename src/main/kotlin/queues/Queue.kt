@@ -5,7 +5,7 @@ interface Queue <T> {
 
     fun dequeue(): T?
 
-    fun peek(): T
+    fun peek(): T?
 
     val count: Int
         get
