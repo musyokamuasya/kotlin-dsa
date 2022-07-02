@@ -8,11 +8,28 @@ class BinaryNode<T>(val value: T) {
     var leftChild : BinaryNode<T>? = null
     var rightChild : BinaryNode<T>? = null
 
+    /**
+     * In Order Traversal
+     * Recursively visits the left node, then the parent and then the right node
+     * It is an example that prints the nodes in ascending order
+     **/
     fun inOrderTraversal (visitor: Visitor<T>) {
         leftChild?.inOrderTraversal(visitor)
         visitor(value)
 
         rightChild?.inOrderTraversal(visitor)
+    }
+
+    /**
+     * Pre-Order Traversal
+     * Visits the current node first
+     * Recursively visits the left and right node
+     *
+     **/
+    fun preOrderTraversal (visitor: Visitor<T>) {
+        visitor(value)
+        leftChild?.preOrderTraversal(visitor)
+        rightChild?.preOrderTraversal(visitor)
     }
 }
 
