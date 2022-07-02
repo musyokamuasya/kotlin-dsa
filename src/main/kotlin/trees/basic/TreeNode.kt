@@ -5,6 +5,23 @@ class TreeNode<T>(val value: T) {
     fun add(child: TreeNode<T>){
         children.add(child)
     }
+
+   /**
+    * Depth first Traversal (DFT)
+    * Starts at the root node and traverses the tree as far as possible along each branch
+    * Once it reaches the leaf it starts backtracking
+    *
+    **/
+    fun depthFirstTraversal(visitor: Visitor<T>){
+       visitor(this)
+       children.forEach(){
+           it.depthFirstTraversal(visitor)
+       }
+    }
+
+    fun makeBeveragesTree(){
+
+    }
 }
 /**
  * Type alias gives another name to a class/object.

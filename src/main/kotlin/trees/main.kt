@@ -1,6 +1,7 @@
 package trees
 
 import trees.basic.TreeNode
+import trees.basic.Visitor
 
 fun main() {
 // Testing trees
