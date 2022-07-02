@@ -1,5 +1,8 @@
 package trees.basic
 
+import queues.QueueInterface
+import java.util.Queue
+
 class TreeNode<T>(val value: T) {
     private val children: MutableList<TreeNode<T>> = mutableListOf()
     fun add(child: TreeNode<T>){
@@ -18,6 +21,18 @@ class TreeNode<T>(val value: T) {
            it.depthFirstTraversal(visitor)
        }
     }
+
+    /**
+     * The traversal method looks at each level before moving to the next level
+     * All nodes at the same node are examined before going to a node lower than that
+     * */
+//    fun levelOrderTraversal(visitor: Visitor<T>){
+//        visitor(this)
+//        val queue = QueueInterface<TreeNode<T>>()
+//        children.forEach{
+//            queue.enqueue(it)
+//        }
+//    }
 
 }
 /**
