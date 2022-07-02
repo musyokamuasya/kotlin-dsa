@@ -7,6 +7,13 @@ typealias Visitor <T> = (T) ->Unit
 class BinaryNode<T>(val value: T) {
     var leftChild : BinaryNode<T>? = null
     var rightChild : BinaryNode<T>? = null
+
+    fun inOrderTraversal (visitor: Visitor<T>) {
+        leftChild?.inOrderTraversal(visitor)
+        visitor(value)
+
+        rightChild?.inOrderTraversal(visitor)
+    }
 }
 
 fun buildBinaryTree(): BinaryNode<Int> {
