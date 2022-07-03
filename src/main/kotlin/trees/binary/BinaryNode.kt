@@ -32,6 +32,24 @@ class BinaryNode<T>(val value: T) {
         rightChild?.preOrderTraversal(visitor)
     }
 
+    fun preOrderTraversalWithNull (visitor: Visitor<T>) {
+        visitor(value)
+        leftChild?.preOrderTraversalWithNull(visitor)
+        rightChild?.preOrderTraversalWithNull(visitor)
+    }
+
+    /**
+     * Actual serialization
+     * Store the values in an array
+     * The serialization returns the values from the node in an array
+     **/
+
+    fun serialize(node: BinaryNode<T> = this): MutableList<T?>{
+        val list = mutableListOf<T?>()
+        node.preOrderTraversalWithNull { list.add(it) }
+        return list
+    }
+
     /**
      * Post-Order Traversal
      * Recursively visit the left and right node
@@ -42,6 +60,13 @@ class BinaryNode<T>(val value: T) {
         rightChild?.postOrderTraversal(visitor)
         visitor(value)
     }
+    /**
+     * Serialization problem is solved using binary traversals
+     * Serialization converts an object into another data type. Allows custom data types to be used in the process
+     * For example, in JSON -> Involves finding a way of serializing a binary tree into a list, and a list back to a binary tree
+     * Pre - order traversal can be used in the process
+     **/
+
 }
 
 fun buildBinaryTree(): BinaryNode<Int> {
