@@ -31,6 +31,17 @@ class BinaryNode<T>(val value: T) {
         leftChild?.preOrderTraversal(visitor)
         rightChild?.preOrderTraversal(visitor)
     }
+
+    /**
+     * Post-Order Traversal
+     * Recursively visit the left and right node
+     * Visit the current node after the child node has been visited
+     **/
+    fun postOrderTraversal (visitor: Visitor<T>) {
+        leftChild?.postOrderTraversal(visitor)
+        rightChild?.postOrderTraversal(visitor)
+        visitor(value)
+    }
 }
 
 fun buildBinaryTree(): BinaryNode<Int> {
