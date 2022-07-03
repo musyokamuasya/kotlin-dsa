@@ -32,6 +32,12 @@ class BinaryNode<T>(val value: T) {
         rightChild?.preOrderTraversal(visitor)
     }
 
+    /**
+     * Serialization problem is solved using binary traversals
+     * Serialization converts an object into another data type. Allows custom data types to be used in the process
+     * For example, in JSON -> Involves finding a way of serializing a binary tree into a list, and a list back to a binary tree
+     * Pre - order traversal can be used in the process
+     **/
     fun preOrderTraversalWithNull (visitor: Visitor<T>) {
         visitor(value)
         leftChild?.preOrderTraversalWithNull(visitor)
@@ -60,12 +66,7 @@ class BinaryNode<T>(val value: T) {
         rightChild?.postOrderTraversal(visitor)
         visitor(value)
     }
-    /**
-     * Serialization problem is solved using binary traversals
-     * Serialization converts an object into another data type. Allows custom data types to be used in the process
-     * For example, in JSON -> Involves finding a way of serializing a binary tree into a list, and a list back to a binary tree
-     * Pre - order traversal can be used in the process
-     **/
+
 
 }
 
