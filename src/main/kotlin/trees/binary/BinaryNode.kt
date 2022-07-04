@@ -19,6 +19,10 @@ class BinaryNode<T>(val value: T) {
 
         rightChild?.inOrderTraversal(visitor)
     }
+//  Function to get the minimum value in a node
+//    Checks the left-most node in the tree
+    val min: BinaryNode<T>
+    get() = leftChild?.min ?: this
 
     /**
      * Pre-Order Traversal
