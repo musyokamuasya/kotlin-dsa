@@ -25,7 +25,10 @@ class Try<Key> {
         //    The last node should be marked as the end of the node
       current.isTerminating = true
     }
-
+/**
+ * Checking if trie contains particular elements
+ * Recursively check if that element is in the key
+ * */
     fun contains(list: List<Key>):Boolean{
         var current = root
         list.forEach { element->
@@ -33,5 +36,38 @@ class Try<Key> {
             current = child
         }
         return current.isTerminating
+    }
+/**
+ * @Remove elements from a trie
+ * Check that it exists using the contains logic
+ * Check whether it has child elements
+ * Remove
+ * -----------------------------------------------
+ * */
+   fun collections(prefix : List<Key>): List<List<Key>>{
+//    Get reference to the root node
+        var current = root
+//    Check if the element exists
+    prefix.forEach {element ->
+        val child = current.children[element] ?: return emptyList()
+        current = child
+
+    }
+    return collections(prefix, current)
+   }
+/**
+ * Create a mutable list to hold your data
+ * For every node child, you recursively add it to the collection
+ **/
+    private fun collections(prefix: List<Key>, node: TryNode<Key>?):List<List<Key>>{
+        val results = mutableListOf<List<Key>>()
+
+        if (node?.isTerminating == false){
+            results.add(prefix)
+        }
+        node?.children?.forEach {(key, node) ->
+            results.addAll(collections(prefix + key, node))
+        }
+        return results
     }
 }
