@@ -37,4 +37,15 @@ class BinarySearchTree <T : Comparable<T>>(){
 
         return node
     }
+
+//    Find value in the node
+    fun containsValue(value: T): Boolean{
+        var found = false
+        root?.inOrderTraversal {
+            if (value == it){
+                found = true
+            }
+        }
+        return false
+    }
 }

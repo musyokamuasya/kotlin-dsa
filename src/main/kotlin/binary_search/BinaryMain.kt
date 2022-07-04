@@ -10,4 +10,10 @@ fun main(){
         insert(5)
     }
     println(exampleTree)
+
+    if (exampleTree.containsValue(5)){
+        println("Found 5")
+    } else {
+        println("5 not found")
+    }
 }
