@@ -60,11 +60,10 @@ class BinarySearchTree <T : Comparable<T>>(){
             }
         }
 
-//        current  = if (value < current.value){
-//            current.leftChild
-//        }
-//        else {
-//            current.rightChild
+//        current = if (value < current.value){
+//
+//        } else{
+//
 //        }
         return false
     }
