@@ -21,9 +21,9 @@ class BinarySearchTree <T : Comparable<T>>(){
 
     private fun insert (
         node: BinaryNode<T>?,
-        value: T) : BinaryNode<T>?{
+        value: T) : BinaryNode<T>{
 //        If the root is empty, add the node to the root node
-        node?: BinaryNode(value)
+        node ?: return BinaryNode(value)
 //      When the value is less than the node value, inset on the left
         if (node != null) {
             if (value < node.value){
@@ -46,6 +46,27 @@ class BinarySearchTree <T : Comparable<T>>(){
                 found = true
             }
         }
+        return found
+    }
+    /**
+     * Uses binary search to look up for values in the binary tree
+     * The space and big O complexity is 0(log n)
+     * */
+    fun optimizedContains (value: T):Boolean{
+        var current = root
+        while (current != null){
+            if (current.value == value){
+                return true
+            }
+        }
+
+//        current  = if (value < current.value){
+//            current.leftChild
+//        }
+//        else {
+//            current.rightChild
+//        }
         return false
     }
+
 }
