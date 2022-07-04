@@ -1,11 +1,17 @@
 package tries
 
 fun main(){
-    val trie = Try<Char>()
-//    Insert cute to the try as list
-    val word = "cute"
-    trie.insert(word.toList())
-    if (trie.contains(word.toList())){
-        println("The trie contains $word")
+    val trie = Try<Char>().apply {
+        insert("car".toList())
+        insert("card".toList())
+        insert("care".toList())
+        insert("cared".toList())
+        insert("cars".toList())
+        insert("carbs".toList())
+        insert("carapace".toList())
+        insert("cargo".toList())
     }
+
+    val withCar = trie.collections("car".toList())
+    println(withCar.toString())
 }
