@@ -99,7 +99,7 @@ class LinkedList <T> {
     /**
      * Removing data follows similar trend as adding. Uses pop, removeLast and removeAfter methods
      *
-     * You can call the method directly to the main function.
+     * You can call the method directly to the main.kt function.
      * */
     fun pop():T?{
 //        Check if the list is not empty, and remove from the head

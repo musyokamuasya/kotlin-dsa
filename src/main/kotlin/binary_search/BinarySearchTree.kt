@@ -21,16 +21,18 @@ class BinarySearchTree <T : Comparable<T>>(){
 
     private fun insert (
         node: BinaryNode<T>?,
-        value: T) : BinaryNode<T>{
+        value: T) : BinaryNode<T>?{
 //        If the root is empty, add the node to the root node
         node?: BinaryNode(value)
 //      When the value is less than the node value, inset on the left
-        if (value < node!!.value){
-            node.leftChild = insert(node.leftChild, value)
-        }
-        else{
-//      When the value is greater/ equal to node value, insert on the right
-            node.rightChild = insert(node.rightChild, value)
+        if (node != null) {
+            if (value < node.value){
+                node.leftChild = insert(node.leftChild, value)
+            }
+            else{
+    //      When the value is greater/ equal to node value, insert on the right
+                node.rightChild = insert(node.rightChild, value)
+            }
         }
 
         return node
