@@ -3,6 +3,9 @@ package tries
 fun main(){
     val trie = Try<Char>()
 //    Insert cute to the try as list
-    trie.insert("cute".toList())
-
+    val word = "cute"
+    trie.insert(word.toList())
+    if (trie.contains(word.toList())){
+        println("The trie contains $word")
+    }
 }

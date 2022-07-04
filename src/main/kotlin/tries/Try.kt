@@ -25,4 +25,13 @@ class Try<Key> {
         //    The last node should be marked as the end of the node
       current.isTerminating = true
     }
+
+    fun contains(list: List<Key>):Boolean{
+        var current = root
+        list.forEach { element->
+            val child = current.children[element] ?: return false
+            current = child
+        }
+        return current.isTerminating
+    }
 }
