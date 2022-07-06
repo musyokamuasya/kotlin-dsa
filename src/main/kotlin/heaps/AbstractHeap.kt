@@ -74,6 +74,19 @@ abstract class AbstractHeap <Element>(): Heap<Element> {
         TODO("I am getting errors in implementing the simple algorithm")
 
    }
+/**
+ * @Heapify
+ * Process of creating a heap from a binary tree
+ * */
+    protected fun heapify(values: ArrayList<Element>){
+        elements = values
+        if (elements.isEmpty()){
+            (count / 2 downTo 0).forEach {
+                siftDown(it)
+            }
+        }
+
+    }
 
     private fun rightChildindex(index: Int) = (2 * index ) + 1
     private fun leftChildIndex(index: Int) = (2 * index ) + 2
