@@ -1,6 +1,16 @@
 package heaps
 
 class CompareToHeapImpl <Element>(private val comparator : Comparator<Element>): AbstractHeap<Element>(){
+    companion object{
+        fun <Element> create(
+            elements: ArrayList<Element>,
+            comparator: Comparator<Element>
+        ): Heap<Element> {
+            val heap = CompareToHeapImpl(comparator)
+            heap.heapify(elements)
+            return heap
+        }
+    }
     override fun compare(a: Element, b: Element): Int {
         return compare(a, b)
     }

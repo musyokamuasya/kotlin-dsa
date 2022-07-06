@@ -4,7 +4,15 @@ package heaps
  **/
 class ComparableHeapImpl <Element : Comparable<Element>> : AbstractHeap<Element>(){
 
-
+    companion object{
+        fun <Element: Comparable<Element>> create(
+            elements: ArrayList<Element>
+        ): Heap<Element>{
+            val heap = ComparableHeapImpl<Element>()
+            heap.heapify(elements)
+            return (heap)
+        }
+    }
     override fun compare(a: Element, b: Element): Int {
         return a.compareTo(b)
     }
