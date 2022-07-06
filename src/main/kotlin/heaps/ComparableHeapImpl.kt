@@ -21,12 +21,12 @@ class ComparableHeapImpl <Element : Comparable<Element>> : AbstractHeap<Element>
         TODO("Not yet implemented")
     }
 
-    override val count: Int
-        get() = TODO("Not yet implemented")
+//    override val count: Int
+//        get() = TODO("Not yet implemented")
 
-    override fun remove(): Element? {
-        TODO("Not yet implemented")
-    }
+//    override fun remove(): Element? {
+//        TODO("Not yet implemented")
+//    }
 
     override fun remove(index: Int): Element? {
         TODO("Not yet implemented")
