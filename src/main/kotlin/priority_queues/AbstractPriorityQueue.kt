@@ -1,6 +1,8 @@
-package queues
+package priority_queues
 
 import heaps.Heap
+import queues.QueueInterface
+
 /**
  * @Priority Queues
  * Using abstract classes to manage comparisons using the two heap implementation methods already defined
