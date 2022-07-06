@@ -20,6 +20,17 @@ abstract class AbstractHeap <Element>(): Heap<Element> {
         siftUp(count -1)
     }
 
+    override fun remove(): Element? {
+//        Ensure the heap is not empty
+        if (isEmpty) return null
+//      If there are elements, perform swap between parent and elements at both i and j positions
+        Collections.swap(elements, 0, count-1)
+//      Keep the record of the item
+        val item = elements.removeAt(count -1)
+        siftDown(0)
+        return item
+    }
+
     private fun rightChildindex(index: Int) = (2 * index ) + 1
     private fun leftChildIndex(index: Int) = (2 * index ) + 2
     private fun parentIndex(index: Int) = (index - 1)/2
@@ -36,5 +47,34 @@ abstract class AbstractHeap <Element>(): Heap<Element> {
             child = parent
             parent = parentIndex(child)
          }
+    }
+/**
+ * Basic removes root node from the heap
+ * Swap the root node with the last element in the heap
+ * Once you remove the root element, store its value so you can return it later
+ * Sift down to ensure every parent is larger than equal to the value of the children
+ * Start from the parent node and check left and right child
+ * Swap the greater value with the parent
+ * If both children are greater than parent, swap with the parent
+ * */
+    private fun siftDown(index: Int){
+        var parent = index
+        while (true) {
+            val left = leftChildIndex(parent)
+            val right = rightChildindex(parent)
+            var candidate = parent
+            if (left < count && compare(elements[left], elements[candidate]) > 0) {
+                candidate = left
+            }
+            if (right < count && compare(elements[right], elements[candidate]) > 0) {
+                candidate = right
+            }
+
+            if (candidate == parent) {
+                return
+            }
+            Collections.swap(elements, parent, candidate)
+            parent = candidate
+        }
     }
 }
