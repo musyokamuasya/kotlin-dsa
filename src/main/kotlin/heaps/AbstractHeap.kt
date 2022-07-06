@@ -31,6 +31,30 @@ abstract class AbstractHeap <Element>(): Heap<Element> {
         return item
     }
 
+    /**
+     * Removing at particular index
+     * Ensure the item is within the index
+     * If you are removing the last item in the index, just remove. Nothing much needed
+     * If you are not removing the last index, swap the item with the item in last index
+     * Return the item and remove it from the index
+     * Perform both sift up and sift down operations
+     * */
+    override fun remove(index: Int): Element? {
+//      If the item is larger than the size of array return null
+        if (index >= count) return null
+//      If the item is the last item in the list, just remove it
+        return if (index == count -1){
+            elements.removeAt(index -1)
+        } else {
+//           If element is inside the array, swap the element with the last element, remove it and sift up and down until well positioned
+            Collections.swap(elements, index, count -1)
+            val item = elements.removeAt(index -1)
+            siftDown(index)
+            siftUp(index)
+            item
+        }
+    }
+
     private fun rightChildindex(index: Int) = (2 * index ) + 1
     private fun leftChildIndex(index: Int) = (2 * index ) + 2
     private fun parentIndex(index: Int) = (index - 1)/2
