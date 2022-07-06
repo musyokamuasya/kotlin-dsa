@@ -2,7 +2,6 @@ package queues
 
 interface QueueInterface <T> {
     fun enqueue(item: T) : Boolean
-
     fun dequeue(): T?
 
     fun peek(): T?
