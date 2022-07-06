@@ -1,6 +1,10 @@
 package heaps
-
+/**
+ * The stack formula is 2i + 1 for the left child, and 2i + 2 for the right child
+ **/
 class ComparableHeapImpl <Element : Comparable<Element>> : AbstractHeap<Element>(){
+
+
     override fun compare(a: Element, b: Element): Int {
         return a.compareTo(b)
     }
