@@ -14,7 +14,9 @@ abstract class AbstractHeap <Element>(): Heap<Element> {
     }
 
     override fun insert(element: Element) {
+//      append element to the array
         elements.add(element)
+//      Swap the current node with its parent as long as the element has a higher priority than its parent
         siftUp(count -1)
     }
 
@@ -27,7 +29,9 @@ abstract class AbstractHeap <Element>(): Heap<Element> {
 //    Get reference to child for tracking
         var child = index
         var parent = parentIndex(child)
+//      Check whether the element has higher priority than the parent
         while (child > 0 && compare(elements[child], elements[parent]) > 0){
+//      Swap until the element is positioned correctly in the tree
         Collections.swap(elements, child, parent)
             child = parent
             parent = parentIndex(child)
