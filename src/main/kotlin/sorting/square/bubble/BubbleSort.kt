@@ -1,4 +1,6 @@
-package sorting.bubble
+package sorting.square.bubble
+
+import sorting.bubble.swapAt
 
 /**
  * @Bubblesort

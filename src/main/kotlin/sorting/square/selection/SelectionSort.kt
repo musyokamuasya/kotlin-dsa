@@ -1,4 +1,4 @@
-package sorting.selection
+package sorting.square
 
 import sorting.bubble.swapAt
 /**
