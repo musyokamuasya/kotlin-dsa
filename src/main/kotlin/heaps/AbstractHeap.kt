@@ -1,6 +1,7 @@
 package heaps
 
 import java.util.*
+
 import kotlin.collections.ArrayList
 
 abstract class AbstractHeap <Element>(): Heap<Element> {
@@ -54,6 +55,25 @@ abstract class AbstractHeap <Element>(): Heap<Element> {
             item
         }
     }
+
+    /**
+     * Searching for element in the array
+     * If the element is larger than the array, return null
+     * Check for priority -> if it has higher priority, it cannot be lower in the heap
+     * If element is equal to the element at index i, return the element
+     * Otherwise recursively check elements on the right, and elements on the left
+     * If not found, element is not in the array
+    * */
+
+   private fun elementAtIndex(element: Element, index: Int): Int?{
+       if (index >= count) return null
+
+        if (element == elements[index]) return index
+
+//        Finish this search algorithm
+        TODO("I am getting errors in implementing the simple algorithm")
+
+   }
 
     private fun rightChildindex(index: Int) = (2 * index ) + 1
     private fun leftChildIndex(index: Int) = (2 * index ) + 2
