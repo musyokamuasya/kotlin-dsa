@@ -9,13 +9,20 @@ fun main(){
 
 //Splitting
 fun <T: Comparable<T>> List<T>.mergeSort(): List<T>{
+    /**
+     * @MergeSort
+     * Works by first splitting the array into singular numbers
+     * */
     if (this.size < 2) return this
     val middle = this.size/2
     val left = this.subList(0, middle).mergeSort()
     val right = this.subList(middle, this.size).mergeSort()
     return merge(left, right)
 }
-
+/**
+ * @MergeSort
+ * Second function merges the lists into one large list
+ * */
 private fun <T: Comparable<T>> merge(left: List<T>, right: List<T>): List<T> {
 //    Implementation comes here
     var rightIndex = 0
