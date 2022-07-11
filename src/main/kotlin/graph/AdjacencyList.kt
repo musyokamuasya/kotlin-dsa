@@ -11,22 +11,33 @@ class AdjacencyList<T>: Graph<T> {
     }
 
     override fun addDirectedEdge(source: Vertex<T>, destination: Vertex<T>, weight: Double?) {
-        TODO("Not yet implemented")
+        val edge = Edge(source, destination, weight)
+        adjacencies[source]?.add(edge)
     }
 
-    override fun unDirectedEdge(source: Vertex<T>, destination: Vertex<T>, weight: Double?) {
-        TODO("Not yet implemented")
+    override fun addUnDirectedEdge(source: Vertex<T>, destination: Vertex<T>, weight: Double?) {
+        /**
+         * The undirected edge is viewed as bidirectional graph
+         * The source and the destination can always swap
+         * */
+        addDirectedEdge(source, destination, weight)
+        addDirectedEdge(destination, source, weight)
     }
 
     override fun addEdge(edgeType: EdgeType, source: Vertex<T>, destination: Vertex<T>, weight: Double?) {
-        TODO("Not yet implemented")
+        when(edgeType){
+            EdgeType.DIRECTED -> addDirectedEdge(source, destination, weight)
+            EdgeType.UNDIRECTED -> addUnDirectedEdge(source, destination, weight)
+        }
     }
-
-    override fun edges(source: Vertex<T>): ArrayList<Edge<T>> {
-        TODO("Not yet implemented")
-    }
+    /**
+     * Return an array of edges or an empty array
+     * */
+    override fun edges(source: Vertex<T>) = adjacencies[source]?: arrayListOf()
 
     override fun weight(source: Vertex<T>, destination: Vertex<T>): Double? {
-        TODO("Not yet implemented")
+        return edges(source).firstOrNull{
+            it.destination ==destination
+        }?.weight
     }
 }

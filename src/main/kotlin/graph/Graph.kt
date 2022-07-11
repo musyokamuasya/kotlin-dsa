@@ -5,7 +5,7 @@ interface Graph<T> {
 
     fun addDirectedEdge(source: Vertex<T>, destination: Vertex<T>, weight: Double?)
 
-    fun unDirectedEdge(source: Vertex<T>, destination: Vertex<T>, weight: Double?)
+    fun addUnDirectedEdge(source: Vertex<T>, destination: Vertex<T>, weight: Double?)
 
     fun addEdge(edgeType: EdgeType, source: Vertex<T>, destination: Vertex<T>, weight: Double?)
 
