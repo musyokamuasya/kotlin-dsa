@@ -2,6 +2,19 @@ package graph
 
 class AdjacencyList<T>: Graph<T> {
     private val adjacencies: HashMap<Vertex<T>, ArrayList<Edge<T>>> = HashMap()
+    /**
+     * Helper method to print string and directions
+     * */
+    override fun toString(): String {
+        return buildString { 
+            adjacencies.forEach {  (vertex, edge) ->
+                val edgeString = edge.joinToString {
+                    it.destination.data.toString()
+                }
+                append("${vertex.data} ----->[ $edgeString \n]")
+            }
+        }
+    }
 
     override fun createVertex(data: T): Vertex<T> {
 //        Create a new vertex and return it
