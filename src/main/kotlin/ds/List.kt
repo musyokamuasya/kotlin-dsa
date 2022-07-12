@@ -6,7 +6,8 @@ package ds
 
 fun main(){
     val grains = Grains()
-    println(grains)
+    val veges = Veges("Sukuma", "Kunde", "Kales", "Mchicha")
+    println(veges)
 }
 
 fun anotherList(){
@@ -34,9 +35,9 @@ class Fish: Item("Omena", 200){
         return itemName
     }
 }
-class Veges: Item("Kales", 100){
+class Veges(vararg val type: String): Item("Kales", 100){
     override fun toString(): String {
-        return itemName
+        return type.joinToString()
     }
 }
 class Grains: Item("Beans", 120){
