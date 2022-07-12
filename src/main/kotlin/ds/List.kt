@@ -50,3 +50,17 @@ class SoftLife: Item("Mutura", 50){
         return itemName
     }
 }
+
+class Order(val number: Int){
+    private val itemList = mutableListOf<Item>()
+
+    fun addItem(item: Item){
+        itemList.add(item)
+    }
+    fun addAllItems(list : List<Item>){
+        itemList.addAll(list)
+    }
+    fun printOrder(){
+        println(itemList)
+    }
+}
