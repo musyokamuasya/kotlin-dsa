@@ -6,6 +6,12 @@ package ds
 
 fun main(){
     val list: List<Int?> = listOf(1, 2,3, null, 4, 5, 6)
+    var numberCount = 0
+    while (numberCount < list.size){
+        println("Count number before adding $numberCount")
+        numberCount++
+        println("Count number after adding is $numberCount" )
+    }
     anotherList()
 }
 
