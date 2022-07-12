@@ -7,7 +7,9 @@ package ds
 fun main(){
     val grains = Grains()
     val veges = Veges("Sukuma", "Kunde", "Kales", "Mchicha")
-    println(veges)
+    val order = Order(5)
+    order.addItem(Veges("Sukuma", "Kunde", "Kales", "Mchicha"))
+    println(order.printOrder())
 }
 
 fun anotherList(){
@@ -61,6 +63,8 @@ class Order(val number: Int){
         itemList.addAll(list)
     }
     fun printOrder(){
-        println(itemList)
+        for(order in itemList){
+            println(order)
+        }
     }
 }
