@@ -5,7 +5,7 @@ import java.util.Set;
 /**
  * Java implementation for checking duplicate number
  * */
-public class ContainsDuplicate {
+public class ContainsDuplicateJava {
     public boolean containsDuplicate(int[] nums) {
         Set<Integer> uniques = new HashSet<>();
         for (int num : nums) {
