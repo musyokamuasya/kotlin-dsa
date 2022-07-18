@@ -32,5 +32,6 @@ class Array <T> private constructor(){
 
     val numbers = arrayOf(1, 2, 3, 4, 5, 6)
     val odd: IntArray = intArrayOf(1, 2, 3, 4, 5, 6)
+    val squares = arrayOf(50, {i: Int -> i*i})
 }
 
