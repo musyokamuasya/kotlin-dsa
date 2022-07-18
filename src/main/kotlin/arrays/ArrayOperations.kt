@@ -21,4 +21,12 @@ fun arrayOps(){
     val ninthItemOrNull = schools.elementAtOrNull(9)
     println(ninthItemOrNull)
 
+    for (schoolIndex in schools.indices){
+        if (schoolIndex % 2==0){
+            println(schools[schoolIndex].lowercase())
+        }
+        else{
+            println(schools[schoolIndex].uppercase())
+        }
+    }
 }
