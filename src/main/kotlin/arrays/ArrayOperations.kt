@@ -29,4 +29,11 @@ fun arrayOps(){
             println(schools[schoolIndex].uppercase())
         }
     }
+
+    for ((index, school) in schools.withIndex())
+        if (index % 2==0){
+            println("School at index $index is ${school.uppercase()}")
+        }else{
+            println(println("School at index $index is ${school.lowercase()}"))
+        }
 }
