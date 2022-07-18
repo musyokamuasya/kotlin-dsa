@@ -29,5 +29,8 @@ class Array <T> private constructor(){
 
 //    Creating a signed array
     val person2: Array<String> = arrayOf("Musyoka","23", "josephmuasya8@gmail.com", "3.8")
+
+    val numbers = arrayOf(1, 2, 3, 4, 5, 6)
+    val odd: IntArray = intArrayOf(1, 2, 3, 4, 5, 6)
 }
 
