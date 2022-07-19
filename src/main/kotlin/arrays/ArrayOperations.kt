@@ -36,4 +36,6 @@ fun arrayOps(){
         }else{
             println(println("School at index $index is ${school.lowercase()}"))
         }
+    schools[1] = "Kenya High"
+    println(schools)
 }
