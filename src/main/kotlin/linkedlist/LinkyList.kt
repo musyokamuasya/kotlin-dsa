@@ -28,4 +28,16 @@ class LinkyList <E>{
         size ++
     }
 
+    fun addLast(element: E){
+        val t = tail
+        val newNode = Node(element, null)
+        tail = newNode
+
+        if (t == null){
+            head = tail
+        }
+
+        t?.next = newNode
+    }
+
 }
