@@ -11,4 +11,16 @@ class LinkyList <E>{
     private var size = 0
     private var head: Node<E>? = null
     private var tail: Node<E>? = null
+
+    fun addFirst(element: E){
+        val h = head
+        val newNode = Node<E>(element, h)
+        head = newNode
+
+        if (h == null){
+            tail = newNode
+        }
+        size ++
+    }
+
 }
