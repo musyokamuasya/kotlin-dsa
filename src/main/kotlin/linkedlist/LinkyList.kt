@@ -12,6 +12,11 @@ class LinkyList <E>{
     private var head: Node<E>? = null
     private var tail: Node<E>? = null
 
+/**
+ * Adding the first element checks whether the element
+ * There is only one element, so the head is also the tail
+ * */
+
     fun addFirst(element: E){
         val h = head
         val newNode = Node<E>(element, h)
