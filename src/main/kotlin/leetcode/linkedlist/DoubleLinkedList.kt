@@ -1,4 +1,4 @@
-package linkedlist
+package leetcode.linkedlist
 data class Node<T>(val value: T, val nextNode: Node<T>, val previousNode: Node<T>)
 class DoubleLinkedList <T>{
     private var size = 0
