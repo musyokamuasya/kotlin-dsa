@@ -13,4 +13,13 @@ class DoubleLinkedList <T>{
      * 4. Remove element at first index
      * 5. Remove element at particular index
      * */
+    fun getFirst() {}
+    fun getLast() {}
+    fun removeFirst() {}
+    fun removeLast(){
+    }
+    fun removeAt(){
+
+    }
+
 }
