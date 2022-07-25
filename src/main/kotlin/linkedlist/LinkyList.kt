@@ -86,9 +86,10 @@ class LinkyList <E>{
                     nextNode = null
                 }
                 else ->{
+                    return true
 //                    Configure the next and previous nodes
 //                    previous =
-//                    nextNode = previous.next
+                    nextNode = previous?.next
                 }
             }
             return true
