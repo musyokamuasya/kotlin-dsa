@@ -14,9 +14,10 @@ class ReverseLinkedList<T> {
     }
 
     fun rev(node: LinkedList<T>?, pre: LinkedList<T>?): LinkedList<T>? {
+        val next: LinkedList<T>? = null
         if (node == null) return pre
-        val temp: LinkedList<T> = node.next
-        node.next = pre
+        val temp: LinkedList<T> = node
+//        node = pre
         return rev(temp, node)
     }
 }
