@@ -1,4 +1,4 @@
-package collections.operations
+package collections.operations.flat
 
 /**
  * Flattening process creates a singe array from nested arrays
