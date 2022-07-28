@@ -17,7 +17,7 @@ class TreeNode<T>(val value: T) {
     **/
     fun depthFirstTraversal(visitor: Visitor<T>){
        visitor(this)
-       children.forEach(){
+       children.forEach{
            it.depthFirstTraversal(visitor)
        }
     }
