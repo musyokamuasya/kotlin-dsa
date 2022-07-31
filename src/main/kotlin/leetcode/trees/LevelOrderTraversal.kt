@@ -29,11 +29,8 @@ class LevelOrderTraversal {
                     if(current.rightNode != null){
                         queue.add(current.rightNode)
                     }
-//                    result.add(current)
-                }
-
-//                result.add(current)
-
+                    result.add(level)
+                    }
             }
 
             return result
