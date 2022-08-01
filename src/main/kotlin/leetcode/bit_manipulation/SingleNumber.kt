@@ -2,12 +2,8 @@ package leetcode.bit_manipulation
 
 class SingleNumber {
     fun singleNumber(nums: IntArray): Int {
-        val hashSet = mutableSetOf<Int>()
-        for(num in nums){
-            if (hashSet.count() == 1){
-                return num
-            }
-        }
-        return -1
+        var ans = nums[0]
+        for (i in 1 until nums.size) ans = ans xor nums[i]
+        return ans
     }
 }
