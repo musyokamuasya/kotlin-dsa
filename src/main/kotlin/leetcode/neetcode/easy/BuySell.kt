@@ -1,6 +1,6 @@
 package leetcode.neetcode.easy
 
-internal class BuySell {
+class BuySell {
     fun maxProfit(prices: IntArray): Int {
         var min = Int.MAX_VALUE
         var ans = Int.MIN_VALUE
